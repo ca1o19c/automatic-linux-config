@@ -34,25 +34,13 @@ echo 'Installing getgist to download dot files from gist'
 sudo pip3 install getgist
 export GETGIST_USER=$username
 
-if [$XDG_CURRENT_DESKTOP == 'KDE'] ; then
-    echo 'Cloning your Konsole configs from gist'
-    cd ~/.local/share/konsole && getmy OmniKonsole.profile && getmy OmniTheme.colorscheme
-
-    echo 'Installing Latte Dock'
-    sudo add-apt-repository ppa:kubuntu-ppa/backports -y
-    sudo apt-get update && sudo apt-get dist-upgrade
-    sudo apt-get install cmake extra-cmake-modules qtdeclarative5-dev libqt5x11extras5-dev libkf5iconthemes-dev libkf5plasma-dev libkf5windowsystem-dev libkf5declarative-dev libkf5xmlgui-dev libkf5activities-dev build-essential libxcb-util-dev libkf5wayland-dev git gettext libkf5archive-dev libkf5notifications-dev libxcb-util0-dev libsm-dev libkf5crash-dev libkf5newstuff-dev libxcb-shape0-dev libxcb-randr0-dev libx11-dev libx11-xcb-dev -y
-    sudo git clone https://github.com/KDE/latte-dock.git /usr/local/latte-dock
-    cd /usr/local/latte-dock && sudo sh install.sh
-
-    echo 'Installing Kvantum Manager'
-    sudo add-apt-repository ppa:papirus/papirus -y
-    sudo apt-get update && sudo apt install qt5-style-kvantum -y
-fi
-
 echo "Setting up your git global user name and email"
 git config --global user.name "$git_config_user_name"
 git config --global user.email $git_config_user_email
+
+echo 'Indexing snap to ZSH'
+sudo chmod 777 /etc/zsh/zprofile
+echo "emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'" >> /etc/zsh/zprofile
 
 echo 'Generating a SSH Key'
 ssh-keygen -t rsa -b 4096 -C $git_config_user_email
