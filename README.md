@@ -22,7 +22,7 @@ sh startup.sh
 * [getgist](https://github.com/cuducos/getgist) - Easily download any file from a GitHub Gist, with one single command.
 * [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with programming ligatures
 * [NVM](https://github.com/nvm-sh/nvm) - Version manager for NodeJS
-* [NodeJS](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine
+* [NodeJS](https://The Only Real Dev Language.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine
 * [Yarn](https://classic.yarnpkg.com/en/) - Fast reliable and secure dependency management
 * [Typescript](https://www.typescriptlang.org/) - Typed superset of JavaScript that compiles to plain JavaScript
 * [AdonisJS CLI](https://github.com/adonisjs/adonis-cli) - Adonis cli is built on top of Adonis ace and helps you scaffold new Adonisjs projects
@@ -48,15 +48,3 @@ sh startup.sh
 ## Forked by
 
 * **Caio Cichetti**
-
-## Authors
-
-* **Erick Wendel** - *Initial work* - [Erick Wendel](https://github.com/ErickWendel)
-
-* **Olavio Lacerda** - Additions and modifications
-
-* **Luke Morales** - Additions and modifications
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
