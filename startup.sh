@@ -113,6 +113,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
+echo 'installing kubectl'
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
 echo 'Installing Heroku CLI'
 curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 heroku --version
@@ -130,6 +133,15 @@ wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
 sudo apt-get update && sudo apt-get install insomnia -y
 mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
 git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
+
+echo 'installing Postman' 
+snap install postman
+
+echo 'installing Redocs'
+sudo npm install -g @redocly/openapi-cli
+
+echo 'installing qbittorrent'
+sudo snap install qbittorrent-arnatious
 
 echo 'Installing Android Studio'
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
@@ -153,8 +165,26 @@ echo 'Installing Peek'
 sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt-get update && sudo apt-get install peek -y
 
+echo 'Installing slack'
+sudo snap install slack --classic
+
 echo 'Installing OBS Studio'
 sudo apt-get install ffmpeg && sudo snap install obs-studio
+
+echo 'Installing telegram'
+sudo snap install telegram-desktop
+
+echo 'Installing intellij'
+sudo snap install intellij-idea-community --classic
+
+echo 'Installing atom'
+sudo snap install atom --classic
+
+echo 'Installing mysql-workbench'
+sudo snap install mysql-workbench-community
+
+echo 'Installing sqlitebrowser'
+sudo snap install sqlitebrowser
 
 echo 'Enabling KVM for Android Studio'
 sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
@@ -171,11 +201,5 @@ cd /usr/local/lotion && sudo ./install.sh
 echo 'Updating and Cleaning Unnecessary Packages'
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
 clear
-
-echo 'Installing postgis container'
-docker run --name postgis -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgis
-
-echo 'Installing mongodb container'
-docker run --name mongodb -p 27017:27017 -d -t mongo
 
 echo 'All setup, enjoy!'
