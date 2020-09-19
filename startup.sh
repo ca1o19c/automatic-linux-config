@@ -89,14 +89,6 @@ code --install-extension Shan.code-settings-sync
 sudo apt-get install gnome-keyring -y
 cls
 
-echo 'Installing Vivaldi' 
-wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
-sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main' -y
-sudo apt update && sudo apt install vivaldi-stable
-
-echo 'Launching Vivaldi on Github so you can paste your keys'
-vivaldi https://github.com/settings/keys </dev/null >/dev/null 2>&1 & disown
-
 echo 'Installing Docker'
 sudo apt-get purge docker docker-engine docker.io
 sudo apt-get install docker.io -y
@@ -134,9 +126,6 @@ sudo apt-get update && sudo apt-get install insomnia -y
 mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
 git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
 
-echo 'installing Postman' 
-snap install postman
-
 echo 'installing Redocs'
 sudo npm install -g @redocly/openapi-cli
 
@@ -173,12 +162,6 @@ sudo apt-get install ffmpeg && sudo snap install obs-studio
 
 echo 'Installing telegram'
 sudo snap install telegram-desktop
-
-echo 'Installing intellij'
-sudo snap install intellij-idea-community --classic
-
-echo 'Installing atom'
-sudo snap install atom --classic
 
 echo 'Installing mysql-workbench'
 sudo snap install mysql-workbench-community
