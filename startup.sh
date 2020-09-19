@@ -62,6 +62,9 @@ git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+source ~/.zshrc
+clear
+
 echo 'Installing NodeJS LTS'
 nvm --version
 nvm install --lts
@@ -105,9 +108,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
-echo 'installing kubectl'
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-
 echo 'Installing Heroku CLI'
 curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 heroku --version
@@ -149,6 +149,12 @@ echo 'Installing Spotify'
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client -y
+
+echo 'Installing gh'
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
 
 echo 'Installing Peek' 
 sudo add-apt-repository ppa:peek-developers/stable -y
