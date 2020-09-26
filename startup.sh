@@ -126,12 +126,6 @@ sudo apt-get update && sudo apt-get install insomnia -y
 mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
 git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
 
-echo 'installing Redocs'
-sudo npm install -g @redocly/openapi-cli
-
-echo 'installing qbittorrent'
-sudo snap install qbittorrent-arnatious
-
 echo 'Installing Android Studio'
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 sudo apt-get update && sudo apt-get install android-studio -y
@@ -160,20 +154,8 @@ echo 'Installing Peek'
 sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt-get update && sudo apt-get install peek -y
 
-echo 'Installing slack'
-sudo snap install slack --classic
-
 echo 'Installing OBS Studio'
 sudo apt-get install ffmpeg && sudo snap install obs-studio
-
-echo 'Installing telegram'
-sudo snap install telegram-desktop
-
-echo 'Installing mysql-workbench'
-sudo snap install mysql-workbench-community
-
-echo 'Installing sqlitebrowser'
-sudo snap install sqlitebrowser
 
 echo 'Enabling KVM for Android Studio'
 sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
@@ -182,10 +164,6 @@ sudo adduser $USER libvirt-qemu
 
 echo 'Installing Robo3t'
 sudo snap install robo3t-snap
-
-echo 'Installing Lotion'
-sudo git clone https://github.com/puneetsl/lotion.git /usr/local/lotion
-cd /usr/local/lotion && sudo ./install.sh
 
 echo 'Updating and Cleaning Unnecessary Packages'
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
