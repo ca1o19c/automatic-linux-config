@@ -12,18 +12,22 @@ echo "What is your github username?"
 echo "For example, mine will be \"caiocichetti\""
 read username
 
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 cd ~ && sudo apt-get update
 
-echo 'Installing curl' 
+echo 'Installing curl'
 sudo apt-get install curl -y
 
-echo 'Installing neofetch' 
+echo 'Installing neofetch'
 sudo apt-get install neofetch -y
 
 echo 'Installing tool to handle clipboard via CLI'
 sudo apt-get install xclip -y
 
-echo 'Installing latest git' 
+echo 'Installing latest git'
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get update && sudo apt-get install git -y
 
@@ -50,7 +54,7 @@ cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
 echo 'Installing FiraCode'
 sudo apt-get install fonts-firacode -y
 
-echo 'Installing NVM' 
+echo 'Installing NVM'
 sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)"
 
 export NVM_DIR="$HOME/.nvm" && (
@@ -117,7 +121,7 @@ wget -c https://github.com/Paxa/postbird/releases/download/0.8.4/Postbird_0.8.4_
 sudo dpkg -i Postbird_0.8.4_amd64.deb
 sudo apt-get install -f -y && rm Postbird_0.8.4_amd64.deb
 
-echo 'Installing Insomnia Core and Omni Theme' 
+echo 'Installing Insomnia Core and Omni Theme'
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
   | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
@@ -139,7 +143,7 @@ wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=d
 sudo dpkg -i discord.deb
 sudo apt-get install -f -y && rm discord.deb
 
-echo 'Installing Spotify' 
+echo 'Installing Spotify'
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client -y
@@ -150,12 +154,38 @@ sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install gh
 
-echo 'Installing Peek' 
+echo 'Installing Peek'
 sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt-get update && sudo apt-get install peek -y
 
 echo 'Installing OBS Studio'
-sudo apt-get install ffmpeg && sudo snap install obs-studio
+sudo apt-get install ffmpeg
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install obs-studio
+
+echo 'Installing Gimp Flatpak'
+flatpak install flathub org.gimp.GIMP
+
+echo 'Installing GreenWithEnvy Flatpak'
+flatpak install flathub com.leinardi.gwe
+
+echo 'Installing beekeeper studio'
+# Install our GPG key
+wget --quiet -O - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
+# add our repo to your apt lists directory
+echo "deb https://dl.bintray.com/beekeeper-studio/releases disco main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio.list
+# Update apt and install
+sudo apt update
+sudo apt install beekeeper-studio
+
+echo 'Installing ghostwriter'
+sudo add-apt-repository ppa:wereturtle/ppa
+sudo apt-get update
+sudo apt-get install ghostwriter
+
+echo 'Installing flameshot'
+sudo apt install flameshot
 
 echo 'Enabling KVM for Android Studio'
 sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
