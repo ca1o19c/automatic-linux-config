@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-Just clone this repo or download and execute
+Basta clonar este repositório ou fazer o download e executar o comando abaixo
 
 ```bash
 sh startup.sh
