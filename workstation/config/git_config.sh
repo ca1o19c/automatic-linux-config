@@ -11,5 +11,5 @@ eval "$(ssh-agent -s)"
 
 echo "Setting up your git global user name, email and code"
 git config --global user.name "$git_config_user_name"
-git config --global user.email $git_config_user_email
+git config --global user.email "$git_config_user_email"
 git config --global core.editor vim
