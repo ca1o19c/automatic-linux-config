@@ -98,11 +98,12 @@ alias update="sudo -- sh -c 'apt update; apt upgrade -y; apt full-upgrade -y; ap
 # sdkman
 alias sdki='sdk install'
 alias sdkun='sdk uninstall'
-alias list='sdk list'
+alias sdkl='sdk list'
 alias sdku='sdk use'
 alias sdkd='sdk default'
 alias sdkc='sdk current'
 alias sdkup='sdk upgrade'
+alias sdkupd='sdk update'
 alias sdkv='sdk version'
 alias sdkb='sdk broadcast'
 alias sdko='sdk offline'
