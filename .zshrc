@@ -20,17 +20,22 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.yarn-config/global/node_modules/.bin"
 #                          OH MY ZSH CONFIG AND PLUGINS                        #
 #------------------------------------------------------------------------------#
 plugins=(
-  common-aliases
+  brew
   sudo
   ssh-agent
-  npm
-  git
+  systemd
+  common-aliases
   zsh-autosuggestions
   zsh-syntax-highlighting
+  vscode
+  git
+  git-flow
   docker
   docker-compose
-  mvn
   vagrant
+  mvn
+  npm
+  golang
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,6 +95,19 @@ alias gitconfig="code ~/.gitconfig"
 alias install="sudo apt install"
 alias remove="sudo apt remove --purge"
 alias update="sudo -- sh -c 'apt update; apt upgrade -y; apt full-upgrade -y; apt autoremove -y; apt autoclean -y'"
+# sdkman
+alias sdki='sdk install'
+alias sdkun='sdk uninstall'
+alias list='sdk list'
+alias sdku='sdk use'
+alias sdkd='sdk default'
+alias sdkc='sdk current'
+alias sdkup='sdk upgrade'
+alias sdkv='sdk version'
+alias sdkb='sdk broadcast'
+alias sdko='sdk offline'
+alias sdksu='sdk selfupdate'
+alias sdkf='sdk flush'
 # Just bcoz clr shorter than clear
 alias clr='clear'
 # Go to the /home/$USER (~) directory and clears window of your terminal
