@@ -17,30 +17,6 @@ export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.yarn-config/global/node_modules/.bin"
 
 #------------------------------------------------------------------------------#
-#                          OH MY ZSH CONFIG AND PLUGINS                        #
-#------------------------------------------------------------------------------#
-plugins=(
-  brew
-  sudo
-  ssh-agent
-  systemd
-  common-aliases
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  vscode
-  git
-  git-flow
-  docker
-  docker-compose
-  vagrant
-  mvn
-  npm
-  golang
-)
-
-source $ZSH/oh-my-zsh.sh
-
-#------------------------------------------------------------------------------#
 #                                   ZSH THEME                                  #
 #------------------------------------------------------------------------------#
 ZSH_THEME="spaceship"
@@ -77,6 +53,30 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="👽"
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_PACKAGE_COLOR="green"
+
+#------------------------------------------------------------------------------#
+#                          OH MY ZSH CONFIG AND PLUGINS                        #
+#------------------------------------------------------------------------------#
+plugins=(
+  brew
+  sudo
+  ssh-agent
+  systemd
+  common-aliases
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  vscode
+  git
+  git-flow
+  docker
+  docker-compose
+  vagrant
+  mvn
+  npm
+  golang
+)
+
+source $ZSH/oh-my-zsh.sh
 
 #------------------------------------------------------------------------------#
 #                  PREFERRED EDITOR FOR LOCAL AND REMOTE SESSIONS              #
@@ -151,7 +151,6 @@ source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #                                  NVM CONFIG                                  #
 #------------------------------------------------------------------------------#
 export NVM_DIR="$HOME/.nvm"
-# [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
