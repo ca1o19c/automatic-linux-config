@@ -120,6 +120,7 @@ alias q="~ && clear"
 [ -d ~/Projects/Forks ]       && alias pjf='cd ~/Projects/Forks'
 [ -d ~/Projects/Playground ]  && alias pjl='cd ~/Projects/Playground'
 [ -d ~/Projects/Repos ]       && alias pjr='cd ~/Projects/Repos'
+[ -d /mnt/c/Users/caio.antonio/Documents/workspace/gitlab ] && alias dwg='cd /mnt/c/Users/caio.antonio/Documents/workspace/gitlab'
 # Commands Shortcuts
 alias e="$EDITOR"
 alias -- +x='chmod +x'
