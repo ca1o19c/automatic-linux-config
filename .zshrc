@@ -62,7 +62,6 @@ plugins=(
   sudo
   ssh-agent
   systemd
-  common-aliases
   zsh-autosuggestions
   zsh-syntax-highlighting
   vscode
@@ -141,12 +140,6 @@ alias getpage='wget --no-clobber --page-requisites --html-extension --convert-li
 # Download file with original filename
 alias get="curl -O -L"
 alias git-root='cd $(git rev-parse --show-toplevel)'
-
-#------------------------------------------------------------------------------#
-#                      AUTOSUGGESTIONS AND HIGHLIGHTING CONFIG                 #
-#------------------------------------------------------------------------------#
-source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #------------------------------------------------------------------------------#
 #                                  NVM CONFIG                                  #
